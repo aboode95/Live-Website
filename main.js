@@ -17,8 +17,8 @@ camera.position.set(0, 1, 5); // Adjust as needed
 // camera.lookAt( new THREE.Vector3( 0, 0, 0 ) );
 
 const renderer = new THREE.WebGLRenderer( {antialias: true} ); // antialias: true option enables smoother edges by multisampling.
-// renderer.setPixelRatio(window.devicePixelRatio ); // set pixel ratio to display pixel ratio for HiDPI monitors
-renderer.setPixelRatio(Math.min(window.devicePixelRatio, 1));
+renderer.setPixelRatio( window.devicePixelRatio ); // set pixel ratio to display pixel ratio for HiDPI monitors
+// renderer.setPixelRatio(Math.min(window.devicePixelRatio, 1));
 renderer.setSize(window.innerWidth, window.innerHeight); // set the renderer to fill the entire viewport by matching to browser dimension.
 renderer.shadowMap.enabled = false; // Disable shadows globally
 
@@ -100,7 +100,7 @@ window.addEventListener('resize', () => {
   camera.aspect = window.innerWidth / window.innerHeight;
   camera.updateProjectionMatrix();
   
-  renderer.render( scene, camera );
+  // renderer.render( scene, camera );
 });
 
 animate();
