@@ -84,13 +84,10 @@ directionalLightTwo.position.set(-6, 0, 0); // Position the light in the scene
 scene.add(directionalLightTwo);
 
 // Create a helper for the directional light
-// const directionalLights = [directionalLight, directionalLightTwo];
-// const helpers = directionalLights.map(directionalLights => new THREE.DirectionalLightHelper(directionalLights, 5));
-// const pointHelper = new THREE.PointLightHelper( pointLight, 5 );
-// scene.add(...helpers, pointHelper); // this line basically does this: helpers.forEach(helper => scene.add(helper));
-
-// const helper = new THREE.CameraHelper(directionalLight);
-// scene.add(helper);
+const directionalLights = [directionalLight, directionalLightTwo];
+const helpers = directionalLights.map(directionalLights => new THREE.DirectionalLightHelper(directionalLights, 5));
+const pointHelper = new THREE.PointLightHelper( pointLight, 5 );
+scene.add(...helpers, pointHelper); // this line basically does this: helpers.forEach(helper => scene.add(helper));
 
 // const ambientLight = new THREE.AmbientLight(0xffffff, 0.2); // Brightness can be adjusted
 // scene.add(ambientLight);
