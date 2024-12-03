@@ -10,4 +10,15 @@ export default defineConfig({
     }
   },
   base: '/Live-Website/', // Replace with the name of your GitHub repository
+  build: {
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          // Splitting large libraries into their own chunks
+          three: ['three'],
+        },
+      },
+    },
+    chunkSizeWarningLimit: 1000,
+  }, 
 });
