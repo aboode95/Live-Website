@@ -25,7 +25,7 @@ renderer.shadowMap.enabled = false; // Disable shadows globally
 
 document.body.appendChild(renderer.domElement); // adds the renderer's canvas (renderer.domElement) to the DOM inside the container element for rendering the scene.
 
-const environment = new RoomEnvironment();
+// const environment = new RoomEnvironment();
 // const pmremGenerator = new THREE.PMREMGenerator( renderer );
 // 
 // scene.backgroundBlurriness = 0.5;
