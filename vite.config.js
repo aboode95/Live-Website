@@ -14,5 +14,6 @@ export default defineConfig({
       // Allow serving files from parent directory
       allow: ['..'],
     }
-  }
+  },
+  base: '/Live-Website/', // Replace with the name of your GitHub repository
 });
