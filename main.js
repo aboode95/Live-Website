@@ -7,6 +7,10 @@ import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 import { RoomEnvironment } from 'three/addons/environments/RoomEnvironment.js';
 
+// Adding the following import solves the issue where the model loads in 'npm run dev', but doesn't work when 'npm run deploy or build'.
+// Issue shown in inspect-console: "Error occured while loading model: 404"
+// https://stackoverflow.com/a/69616533
+import modelScene from './models/Glass_DispersionTest.gltf?url';
 
 const scene = new THREE.Scene();
 
@@ -38,7 +42,7 @@ document.body.appendChild(renderer.domElement); // adds the renderer's canvas (r
 // Load GLTF model
 const loader = new GLTFLoader();
 loader.load(
-    './models/Glass_DispersionTest.gltf', // Path to your exported file
+    modelScene, // Path to your exported file
     (gltf) => {
         const model = gltf.scene; // Get the 3D model
         model.position.set(0, 0, 0); // Set position
